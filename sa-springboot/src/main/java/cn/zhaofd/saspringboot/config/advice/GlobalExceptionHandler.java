@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     public SaResult handlerNotLoginException(NotLoginException e) {
         /*
         // 判断场景值，定制化异常信息
-        String message;
+        String message = "";
         if (e.getType().equals(NotLoginException.NOT_TOKEN)) {
             message = "未能读取到有效token";
         } else if (e.getType().equals(NotLoginException.INVALID_TOKEN)) {
