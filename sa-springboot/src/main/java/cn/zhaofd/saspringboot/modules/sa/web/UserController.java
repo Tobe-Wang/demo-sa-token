@@ -24,7 +24,7 @@ public class UserController {
      *
      * @param username 用户名
      * @param password 密码
-     * @return 结果
+     * @return SaResult
      */
     @RequestMapping("/doLogin")
     public SaResult doLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
@@ -39,19 +39,24 @@ public class UserController {
     /**
      * 获取登录状态
      *
-     * @return 登录状态
+     * @return SaResult
      */
     @RequestMapping("/isLogin")
-    public String isLogin() {
-        return "当前会话是否登录：" + StpUtil.isLogin();
+    public SaResult isLogin() {
+        boolean isLogin = StpUtil.isLogin();
+        return SaResult.ok("当前客户端是否登录：" + isLogin);
     }
 
     /**
      * 检验登录
      */
     @RequestMapping("/checkLogin")
-    public void checkLogin() {
+    public SaResult checkLogin() {
+        // 检验当前会话是否已经登录, 如果未登录，则抛出异常：`NotLoginException`
         StpUtil.checkLogin();
+
+        // 抛出异常后，代码将走入全局异常处理（GlobalException.java），如果没有抛出异常，则代表通过了登录校验，返回下面信息
+        return SaResult.ok("校验登录成功，这行字符串是只有登录后才会返回的信息");
     }
 
     /**
@@ -101,6 +106,21 @@ public class UserController {
         StpUtil.getTokenTimeout();
         */
 
+        /*
+        // TokenInfo 包含了此 Token 的大多数信息
+        SaTokenInfo info = StpUtil.getTokenInfo();
+        System.out.println("Token 名称：" + info.getTokenName());
+        System.out.println("Token 值：" + info.getTokenValue());
+        System.out.println("当前是否登录：" + info.getIsLogin());
+        System.out.println("当前登录的账号id：" + info.getLoginId());
+        System.out.println("当前登录账号的类型：" + info.getLoginType());
+        System.out.println("当前登录客户端的设备类型：" + info.getLoginDeviceType());
+        System.out.println("当前 Token 的剩余有效期：" + info.getTokenTimeout()); // 单位：秒，-1代表永久有效，-2代表值不存在
+        System.out.println("当前 Token 距离被冻结还剩：" + info.getTokenActiveTimeout()); // 单位：秒，-1代表永久有效，-2代表值不存在
+        System.out.println("当前 Account-Session 的剩余有效期" + info.getSessionTimeout()); // 单位：秒，-1代表永久有效，-2代表值不存在
+        System.out.println("当前 Token-Session 的剩余有效期" + info.getTokenSessionTimeout()); // 单位：秒，-1代表永久有效，-2代表值不存在
+        */
+
         return SaResult.data(StpUtil.getTokenInfo());
     }
 
@@ -112,7 +132,7 @@ public class UserController {
     @RequestMapping("/logout")
     public SaResult logout() {
         StpUtil.logout();
-        return SaResult.ok();
+        return SaResult.ok("退出登录成功");
     }
 
     /**
