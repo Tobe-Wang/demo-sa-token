@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * 用户登录、登出控制
  */
@@ -111,5 +113,24 @@ public class UserController {
     public SaResult logout() {
         StpUtil.logout();
         return SaResult.ok();
+    }
+
+    /**
+     * 获取当前登录用户的角色和权限
+     *
+     * @return SaResult
+     */
+    @RequestMapping("/getRoleAndPermission")
+    public SaResult getRoleAndPermission() {
+        // 查询权限信息 ，如果当前会话未登录，会返回一个空集合
+        List<String> permissionList = StpUtil.getPermissionList();
+
+        // 查询角色信息 ，如果当前会话未登录，会返回一个空集合
+        List<String> roleList = StpUtil.getRoleList();
+
+        // 返回给前端
+        return SaResult.ok()
+                .set("roleList", roleList)
+                .set("permissionList", permissionList);
     }
 }
