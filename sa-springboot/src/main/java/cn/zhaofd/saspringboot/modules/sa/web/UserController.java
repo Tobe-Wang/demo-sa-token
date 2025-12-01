@@ -3,7 +3,7 @@
  * Email：hzbeq@qq.com
  */
 
-package cn.zhaofd.saspringboot.modules.demo.web;
+package cn.zhaofd.saspringboot.modules.sa.web;
 
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 用户登录、登出控制
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -50,12 +53,52 @@ public class UserController {
     }
 
     /**
+     * 获取当前登录id
+     *
+     * @return 登录id
+     */
+    @RequestMapping("/getLoginId")
+    public String getLoginId() {
+        /*
+        // 获取当前会话账号id, 如果未登录，则抛出异常：`NotLoginException`
+        StpUtil.getLoginId();
+
+        // 类似查询API还有：
+        StpUtil.getLoginIdAsString();    // 获取当前会话账号id, 并转化为`String`类型
+        StpUtil.getLoginIdAsInt();       // 获取当前会话账号id, 并转化为`int`类型
+        StpUtil.getLoginIdAsLong();      // 获取当前会话账号id, 并转化为`long`类型
+
+        // 获取当前会话账号id, 如果未登录，则返回 null
+        StpUtil.getLoginIdDefaultNull();
+
+        // 获取当前会话账号id, 如果未登录，则返回默认值 （`defaultValue`可以为任意类型）
+        StpUtil.getLoginId(T defaultValue);
+        */
+
+        return StpUtil.getLoginIdAsString();
+    }
+
+    /**
      * 获取 Token 信息
      *
      * @return SaResult
      */
     @RequestMapping("/tokenInfo")
     public SaResult tokenInfo() {
+        /*
+        // 获取当前会话的 token 值
+        StpUtil.getTokenValue();
+
+        // 获取当前`StpLogic`的 token 名称
+        StpUtil.getTokenName();
+
+        // 获取指定 token 对应的账号id，如果未登录，则返回 null
+        StpUtil.getLoginIdByToken(String tokenValue);
+
+        // 获取当前会话剩余有效期（单位：s，返回-1代表永久有效）
+        StpUtil.getTokenTimeout();
+        */
+
         return SaResult.data(StpUtil.getTokenInfo());
     }
 
