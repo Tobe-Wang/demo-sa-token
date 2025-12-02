@@ -9,6 +9,8 @@ import cn.dev33.satoken.annotation.SaCheckDisable;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.dev33.satoken.annotation.SaCheckRole;
+import cn.zhaofd.saspringboot.modules.satoken.service.AnnotationAuthService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/annotation/auth")
 public class AnnotationAuthController {
+    private final AnnotationAuthService annotationAuthService;
+
+    public AnnotationAuthController(@Autowired AnnotationAuthService annotationAuthService) {
+        this.annotationAuthService = annotationAuthService;
+    }
+
     /**
      * 登录校验：只有登录之后才能进入该方法
      *
@@ -60,5 +68,16 @@ public class AnnotationAuthController {
     @RequestMapping("/send")
     public String send() {
         return "账号未被封禁";
+    }
+
+    /**
+     * AOP注解鉴权
+     * <br />默认拦截器模式有一个缺点无法在Controller层以外的代码使用进行校验，使用AOP插件便可以在任意层级使用注解鉴权
+     *
+     * @return String
+     */
+    @RequestMapping("/modify")
+    public String modify() {
+        return annotationAuthService.modify();
     }
 }
