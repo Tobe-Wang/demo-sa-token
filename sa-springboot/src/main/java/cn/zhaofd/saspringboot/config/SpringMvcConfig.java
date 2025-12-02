@@ -19,8 +19,9 @@ public class SpringMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-//        // 注册Sa-Token拦截器，打开注解式鉴权功能
-//        // 默认拦截器模式有一个缺点无法在Controller层以外的代码使用进行校验，使用AOP插件便可以在任意层级使用注解鉴权
+        // 注册Sa-Token拦截器，打开注解式鉴权功能
+        // 默认拦截器模式有一个缺点无法在Controller层以外的代码使用进行校验，使用AOP插件便可以在任意层级使用注解鉴权
+        // 拦截器模式和AOP模式不可同时集成，否则会在Controller层发生一个注解校验两次的bug
 //        registry.addInterceptor(new SaInterceptor()).addPathPatterns("/**");
     }
 }
