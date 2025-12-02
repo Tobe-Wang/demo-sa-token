@@ -3,7 +3,7 @@
  * Email：hzbeq@qq.com
  */
 
-package cn.zhaofd.saspringboot.modules.sa.service;
+package cn.zhaofd.saspringboot.modules.satoken.service;
 
 import cn.dev33.satoken.stp.StpInterface;
 import org.springframework.stereotype.Component;

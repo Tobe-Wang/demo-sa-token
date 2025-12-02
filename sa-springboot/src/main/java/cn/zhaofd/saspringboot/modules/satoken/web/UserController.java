@@ -3,7 +3,7 @@
  * Email：hzbeq@qq.com
  */
 
-package cn.zhaofd.saspringboot.modules.sa.web;
+package cn.zhaofd.saspringboot.modules.satoken.web;
 
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
