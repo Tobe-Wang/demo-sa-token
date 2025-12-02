@@ -6,3 +6,6 @@
 
 ## sa-springboot
 使用示例-SpringBoot集成Sa-Token
+
+## sa-route-interceptor
+使用示例-路由拦截器鉴权

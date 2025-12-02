@@ -16,6 +16,7 @@
     <description>使用示例-Sa-Token权限认证框架</description>
     <modules>
         <module>sa-springboot</module>
+        <module>sa-route-interceptor</module>
     </modules>
 
     <properties>
