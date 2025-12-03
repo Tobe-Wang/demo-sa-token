@@ -50,8 +50,29 @@
                 <artifactId>sa-token-spring-aop</artifactId>
                 <version>1.44.0</version>
             </dependency>
+            <!-- sa-token整合RedisTemplate。将会话数据存储在缓存中间件上，分布式环境中共享数据 -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis-template</artifactId>
+                <version>1.44.0</version>
+            </dependency>
             <!-- sa-token结束 -->
 
+            <!-- core开始 -->
+            <!-- core-spring-redis -->
+            <dependency>
+                <groupId>cn.zhaofd</groupId>
+                <artifactId>core-spring-redis</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <!-- core结束 -->
+
+            <!-- redis连接池启用依赖 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>2.12.1</version>
+            </dependency>
             <!-- lombok编译时自动生成对象类基础方法 -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
