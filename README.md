@@ -9,3 +9,6 @@
 
 ## sa-route-interceptor
 使用示例-路由拦截器鉴权
+
+## sa-redis
+使用示例-集成Redis，将会话数据存储在缓存中间件上，分布式环境中共享数据
