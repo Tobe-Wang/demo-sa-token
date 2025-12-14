@@ -5,7 +5,7 @@
 > Spring Boot 3.5.X
 
 ## sa-springboot
-使用示例-SpringBoot集成Sa-Token
+使用示例-SpringBoot集成Sa-Token，使用sa-token AOP注解鉴权插件
 
 ## sa-route-interceptor
 使用示例-路由拦截器鉴权
