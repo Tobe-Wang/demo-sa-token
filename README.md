@@ -15,3 +15,12 @@
 
 ## sa-sso-server
 使用示例-单点登录（统一认证中心SSO-Server）
+
+## sa-sso-model1
+使用示例-SSO模式一（共享Cookie同步会话）
+
+## sa-sso-model2
+使用示例-SSO模式二（URL重定向传播会话）
+
+## sa-sso-model3
+使用示例-SSO模式三（Http请求获取会话）

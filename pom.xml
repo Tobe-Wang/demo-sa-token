@@ -18,6 +18,10 @@
         <module>sa-springboot</module>
         <module>sa-route-interceptor</module>
         <module>sa-redis</module>
+        <module>sa-sso-server</module>
+        <module>sa-sso-model1</module>
+        <module>sa-sso-model2</module>
+        <module>sa-sso-model3</module>
     </modules>
 
     <properties>
