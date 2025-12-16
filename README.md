@@ -18,6 +18,8 @@
 
 ## sa-sso-model1
 使用示例-SSO模式一（共享Cookie同步会话）
+### 1. sso-server
+统一认证中心模块
 
 ## sa-sso-model2
 使用示例-SSO模式二（URL重定向传播会话）
