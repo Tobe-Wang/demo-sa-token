@@ -19,11 +19,8 @@ spring:
 # sa-token
 sa-token:
   is-log: true # 是否输出操作日志
-
-  # SSO-模式一相关配置 (非模式一不需要配置)
-  #  cookie:
-  #    domain: stp.com # 配置Cookie作用域
-
+  cookie: # SSO-模式一相关配置 (非模式一不需要配置)
+    domain: stp.com # 配置Cookie作用域
   sso-server: # SSO-Server配置
     ticket-timeout: 300 # Ticket有效期 (单位: 秒)，默认五分钟
     clients: # 应用列表：配置接入的应用信息

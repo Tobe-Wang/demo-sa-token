@@ -19,6 +19,7 @@
     <description>使用示例-SSO模式一（共享Cookie同步会话）</description>
     <modules>
         <module>sso-model1-server</module>
+        <module>sso-model1-client</module>
     </modules>
 
     <properties>
