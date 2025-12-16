@@ -17,7 +17,7 @@ public class SsoModel1ServerApplication {
         System.out.println();
         System.out.println("---------------------- Sa-Token SSO 统一认证中心启动成功 ----------------------");
         System.out.println("配置信息：" + SaSsoManager.getServerConfig());
-        System.out.println("统一认证登录地址：http://localhost:9100/sso/auth");
+        System.out.println("统一认证登录地址：http://sso.stp.com:9100/sso/auth");
         System.out.println("测试前需要根据官网文档修改 hosts 文件，测试账号密码：sa / 123456");
         System.out.println();
     }
