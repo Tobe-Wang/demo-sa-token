@@ -32,3 +32,7 @@
 
 ## sa-sso-model3
 使用示例-SSO模式三（Http请求获取会话）
+### 1. sso-model3-server
+统一认证中心模块
+### 2. sso-model3-client
+客户端模块

@@ -1,0 +1,39 @@
+### 全局开发环境配置文件 ###
+
+spring:
+  data:
+    redis:
+      host: localhost # Redis服务器地址
+      port: 6379 # Redis服务器连接端口（默认为6379）
+      password: pwd@123QWE # Redis服务器连接密码
+      database: 4  # Redis数据库索引（默认为0）
+      timeout: 10000ms # 连接超时时间（毫秒）
+      lettuce:
+        pool:
+          enabled: true # 是否启用连接池
+          max-active: 8 # 连接池最大连接数（使用负值表示没有限制，默认为8）
+          max-wait: 10000ms # 连接池最大阻塞等待时间（使用负值表示没有限制，默认为-1ms）
+          max-idle: 4 # 连接池中的最大空闲连接（使用负值表示没有限制，默认为8）
+          min-idle: 1 # 连接池中的最小空闲连接（默认为0）
+
+# sa-token
+sa-token:
+  is-log: true # 是否输出操作日志
+#  cookie: # SSO-模式一相关配置 (非模式一不需要配置)
+#    domain: stp.com # 配置Cookie作用域
+  sso-server: # SSO-Server配置
+    ticket-timeout: 300 # Ticket有效期 (单位: 秒)，默认五分钟
+    clients: # 应用列表：配置接入的应用信息
+      sso-client1: # 应用 sso-client1：采用模式一对接 (同域、同Redis)
+        client: sso-client1
+        allow-url: "*" # 允许授权地址（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
+      sso-client2: # 应用 sso-client2：采用模式二对接 (跨域、同Redis)
+        client: sso-client2
+        allow-url: "*" # 允许授权地址（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
+        secret-key: SSO-C2-kQwIOrYvnXmSDkwEiFngrKidMcdrgKor
+      sso-client3: # 应用 sso-client3：采用模式三对接 (跨域、跨Redis)
+        client: sso-client3 # 应用名称
+        allow-url: "*" # 允许授权地址（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
+        is-push: true # 是否接收消息推送
+        push-url: http://sa-sso-client1.com:9310/sso/pushC # 消息推送地址
+        secret-key: SSO-C3-kQwIOrYvnXmSDkwEiFngrKidMcdrgKor # 接口调用秘钥 (如果不配置则使用全局默认秘钥)
