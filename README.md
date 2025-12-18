@@ -25,6 +25,10 @@
 
 ## sa-sso-model2
 使用示例-SSO模式二（URL重定向传播会话）
+### 1. sso-model2-server
+统一认证中心模块
+### 2. sso-model2-client
+客户端模块
 
 ## sa-sso-model3
 使用示例-SSO模式三（Http请求获取会话）

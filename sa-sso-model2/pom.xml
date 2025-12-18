@@ -17,9 +17,10 @@
     <artifactId>sa-sso-model2</artifactId>
     <packaging>pom</packaging>
     <description>使用示例-SSO模式二（URL重定向传播会话）</description>
-<!--    <modules>-->
-<!--        <module>api-gateway-service</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>sso-model2-server</module>
+        <module>sso-model2-client</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
