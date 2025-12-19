@@ -24,16 +24,16 @@ sa-token:
   sso-server: # SSO-Server配置
     ticket-timeout: 300 # Ticket有效期 (单位: 秒)，默认五分钟
     clients: # 应用列表：配置接入的应用信息
-      sso-client1: # 应用 sso-client1：采用模式一对接 (同域、同Redis)
-        client: sso-client1
-        allow-url: "*" # 允许授权地址（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
-      sso-client2: # 应用 sso-client2：采用模式二对接 (跨域、同Redis)
-        client: sso-client2
-        allow-url: "*" # 允许授权地址（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
-        secret-key: SSO-C2-kQwIOrYvnXmSDkwEiFngrKidMcdrgKor
+#      sso-client1: # 应用 sso-client1：采用模式一对接 (同域、同Redis)
+#        client: sso-client1
+#        allow-url: "*" # 允许授权地址，不在此配置项中的URL将无法单点登录成功（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
+#      sso-client2: # 应用 sso-client2：采用模式二对接 (跨域、同Redis)
+#        client: sso-client2
+#        allow-url: "*" # 允许授权地址，不在此配置项中的URL将无法单点登录成功（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
+#        secret-key: SSO-C2-kQwIOrYvnXmSDkwEiFngrKidMcdrgKor
       sso-client3: # 应用 sso-client3：采用模式三对接 (跨域、跨Redis)
         client: sso-client3 # 应用名称
-        allow-url: "*" # 允许授权地址（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
+        allow-url: "*" # 允许授权地址，不在此配置项中的URL将无法单点登录成功（为了方便测试配置为*，线上生产环境一定要配置为详细URL地址）
         is-push: true # 是否接收消息推送
         push-url: http://sa-sso-client1.com:9310/sso/pushC # 消息推送地址
         secret-key: SSO-C3-kQwIOrYvnXmSDkwEiFngrKidMcdrgKor # 接口调用秘钥 (如果不配置则使用全局默认秘钥)
