@@ -26,7 +26,7 @@ public class SsoClientController {
     @RequestMapping("/")
     public String index() {
         // @formatter:off
-        return "<h2>Sa-Token SSO-Client 应用端 (模式二)</h2>" +
+        return "<h2>Sa-Token SSO-Client 应用端 (模式三)</h2>" +
                 "<p>当前会话是否登录：" + StpUtil.isLogin() + " (" + StpUtil.getLoginId("") + ")</p>" +
                 "<p> " +
                 "<a href='/sso/login?back=/'>登录</a> - " +
