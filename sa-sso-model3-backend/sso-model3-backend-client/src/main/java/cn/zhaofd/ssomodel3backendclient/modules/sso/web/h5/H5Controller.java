@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 前后台分离架构下集成SSO
+ * client前后台分离架构下集成SSO
  * <br />注：如果不需要前后端分离架构下集成SSO，可删除此包下所有代码
  */
 @RestController

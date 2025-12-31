@@ -23,5 +23,7 @@ sa-token:
   sso-client: # SSO-相关配置
     client: sso-client3 # 应用标识
     server-url: http://sa-sso-server.com:9400 # SSO-Server 端主机地址
+    auth-url: http://127.0.0.1:8848/sso-model3-server-h5/sso-auth.html # 在sso-server端前后端分离时需要单独配置auth-url参数（如sso-server端前后端不分离，则注释掉此行）
     is-http: true # 使用 Http 请求校验 ticket (模式三)
     secret-key: SSO-C3-kQwIOrYvnXmSDkwEiFngrKidMcdrgKor # API 接口调用秘钥
+

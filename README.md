@@ -47,6 +47,7 @@
 统一认证中心模块
 ### 2. sso-model3-backend-client
 客户端模块
-
-## sa-sso-model3-frontend-h5
-使用示例-SSO模式三（Http请求获取会话）【前后端分离架构下的整合方案（前端h5）】
+### 3. sso-model3-client-h5
+client前端h5
+### 4. sso-model3-server-h5
+server前端h5

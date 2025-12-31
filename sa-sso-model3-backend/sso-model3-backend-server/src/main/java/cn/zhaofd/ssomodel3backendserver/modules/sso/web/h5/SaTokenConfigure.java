@@ -3,7 +3,7 @@
  * Email：hzbeq@qq.com
  */
 
-package cn.zhaofd.ssomodel3backendclient.modules.sso.web.h5;
+package cn.zhaofd.ssomodel3backendserver.modules.sso.web.h5;
 
 import cn.dev33.satoken.fun.strategy.SaCorsHandleFunction;
 import cn.dev33.satoken.router.SaHttpMethod;
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SaTokenConfigure {
     /**
-     * CORS跨域处理策略
+     * CORS 跨域处理策略
      */
     @Bean
     public SaCorsHandleFunction corsHandle() {
