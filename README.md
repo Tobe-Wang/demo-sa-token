@@ -18,6 +18,7 @@
 
 ## sa-sso-model1
 使用示例-SSO模式一（共享Cookie同步会话）
+> 前端同域+后端同Redis
 ### 1. sso-model1-server
 统一认证中心模块
 ### 2. sso-model1-client
@@ -25,6 +26,7 @@
 
 ## sa-sso-model2
 使用示例-SSO模式二（URL重定向传播会话）
+> 前端不同域+后端同Redis
 ### 1. sso-model2-server
 统一认证中心模块
 ### 2. sso-model2-client
@@ -32,7 +34,19 @@
 
 ## sa-sso-model3
 使用示例-SSO模式三（Http请求获取会话）
+> 前端不同域+后端不同Redis
 ### 1. sso-model3-server
 统一认证中心模块
 ### 2. sso-model3-client
 客户端模块
+
+## sa-sso-model3-backend
+使用示例-SSO模式三（Http请求获取会话）【前后端分离架构下的整合方案（后端）】
+> 前端不同域+后端不同Redis
+### 1. sso-model3-backend-server
+统一认证中心模块
+### 2. sso-model3-backend-client
+客户端模块
+
+## sa-sso-model3-frontend-h5
+使用示例-SSO模式三（Http请求获取会话）【前后端分离架构下的整合方案（前端h5）】

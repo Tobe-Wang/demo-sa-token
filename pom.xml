@@ -22,6 +22,7 @@
         <module>sa-sso-model1</module>
         <module>sa-sso-model2</module>
         <module>sa-sso-model3</module>
+        <module>sa-sso-model3-backend</module>
     </modules>
 
     <properties>
@@ -130,6 +131,18 @@
                     </configuration>
                 </plugin>
                 <!-- spring-boot结束 -->
+                <!-- maven编译器配置开始 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <compilerArgs>
+                            <!-- 在编译时添加-parameters参数，这会让编译器将方法的参数名信息保留在生成的类文件中 -->
+                            <arg>-parameters</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+                <!-- maven编译器配置结束 -->
             </plugins>
         </pluginManagement>
     </build>
