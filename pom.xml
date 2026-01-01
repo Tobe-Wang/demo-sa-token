@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2025. Tobe Wang
+  ~ Copyright (c) 2025-2026. Tobe Wang
   ~ Email：hzbeq@qq.com
   -->
 
@@ -23,6 +23,7 @@
         <module>sa-sso-model2</module>
         <module>sa-sso-model3</module>
         <module>sa-sso-model3-backend</module>
+        <module>sa-oauth2</module>
     </modules>
 
     <properties>
@@ -80,10 +81,16 @@
                 <artifactId>sa-token-alone-redis</artifactId>
                 <version>1.44.0</version>
             </dependency>
-            <!-- Sa-Token OAuth2.0 模块 -->
+            <!-- Sa-Token OAuth2.0模块 -->
             <dependency>
                 <groupId>cn.dev33</groupId>
                 <artifactId>sa-token-oauth2</artifactId>
+                <version>1.44.0</version>
+            </dependency>
+            <!-- Sa-Token整合Redis (使用jackson序列化方式) -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis-jackson</artifactId>
                 <version>1.44.0</version>
             </dependency>
             <!-- sa-token结束 -->
